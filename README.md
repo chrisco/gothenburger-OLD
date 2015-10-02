@@ -46,3 +46,6 @@ Create MVP in one week
 * Blog, newsletter, and forum (maybe)
 * Test monetization options (ads, partnerships, promotions, etc.)
 
+[![Build Status](https://travis-ci.org/gustafr/gothenburger.svg?branch=master)](https://travis-ci.org/gustafr/gothenburger)
+
+[![Coverage Status](https://coveralls.io/repos/gustafr/gothenburger/badge.svg?branch=master&service=github)](https://coveralls.io/github/gustafr/gothenburger?branch=master)
