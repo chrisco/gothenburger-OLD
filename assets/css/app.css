@@ -1,0 +1,57 @@
+/*BEGIN CSS for nav bar*/
+.has-form {
+  position: absolute;
+  top: 0;
+  left: 6rem;
+  min-width: 10rem;
+}
+
+@media only screen and (max-width: 30em) {
+  .has-form {
+  min-width: 10rem;
+  top: 0.5rem;
+  }
+
+  .has-form .button {
+  height: 1.85rem;
+  }
+}
+/*END CSS for nav bar*/
+
+/*BEGIN CSS for footer*/
+.footer {
+  background-color: #292c2f;
+  text-align: center;
+  padding: 1rem;
+}
+
+.footer p.slogan {
+  color: #8d9093;
+  font-size: 1rem;
+  margin: 0 0 1rem;
+}
+
+.footer p.copyright {
+  color: #8f9296;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.footer .links a {
+  list-style: none;
+  color: #ffffff;
+  font-size: 0.8rem;
+  padding: 1rem 0 1rem;
+  margin: 0;
+}
+
+.footer .links a::after {
+  content: "|";
+  padding: 0 0.3rem 0 0.6rem;
+}
+
+.footer .links a:last-child::after {
+  content: "";
+  padding: 0 0.3rem 0 0.6rem;
+}
+/*END CSS for footer*/

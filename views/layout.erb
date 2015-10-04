@@ -1,15 +1,134 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-  <link rel="stylesheet" href="/css/foundation.css">
-
-  <!-- This is how you would link your custom stylesheet -->
-  <link rel="stylesheet" href="/css/custom.css">
-
-  <script src="/js/vendor/modernizr.js"></script>
-</head>
-<body>
-<%= yield %>
-</body>
-</html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en">
+  <![endif]-->
+  <html class="no-js" lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Gothenburger!</title>
+      <!-- normalize.css and modernizr.js help with browser compatibility -->
+      <link rel="stylesheet" href="/css/normalize.css">
+      <link rel="stylesheet" href="/css/foundation.css">
+      <link rel="stylesheet" href="/css/app.css">
+      <script src="js/vendor/modernizr.js"></script>
+    </head>
+    <body>
+      <div class="row">
+        <div class="small-1 small-centered columns"></div>
+        <div class="small-10 small-centered columns">
+          <nav class="top-bar" data-topbar role="navigation">
+            <ul class="title-area">
+              <li class="name">
+                <h1><a href="/"><strong>Gothenburger!</strong></a></h1>
+              </li>
+              <!-- <li class="has-form">
+                <div class="row collapse">
+                  <div class="large-8 small-9 columns">
+                    <input type="text" placeholder="Find Chit">
+                  </div>
+                  <div class="large-4 small-3 columns">
+                    <a href="#" class="alert button expand">Search</a>
+                  </div>
+                </div>
+              </li> -->
+              <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+              <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+            </ul>
+            <section class="top-bar-section">
+              <!-- Right Nav Section -->
+              <ul class="right">
+                <% unless session[:user_id] %>
+                  <li><a href="/sign_in">Sign In</a></li>
+                  <li><a href="/sign_up">Sign Up</a></li>
+                <% end %>
+                <% if session[:user_id] %>
+                  <li class="has-dropdown">
+                    <a href="#">Admin</a>
+                    <ul class="dropdown">
+                      <li><a href="/sign_out">Sign Out</a></li>
+                    </ul>
+                  </li>
+                <% end %>
+              </ul>
+              <!-- Left Nav Section -->
+              <ul class="left">
+              </ul>
+            </section>
+          </nav>
+          <!-- Flash Section -->
+          <% if flash %>
+          <% flash.each do |name, msg| %>
+          <div id="flash-container" data-alert class="alert-box <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
+            <%= msg %>
+            <a href="#" class="close">&times;</a>
+          </div>
+          <% end %>
+          <% end %>
+          <!-- Yield Section -->
+          <br>
+          <%= yield %>
+          <br>
+          <!-- Footer Section -->
+        </div>
+        <div class="small-1 small-centered columns"></div>
+      </div>
+      <div class="row">
+        <div class="small-1 small-centered columns"></div>
+        <div class="small-10 small-centered columns">
+          <footer class="footer">
+            <div class="row">
+              <div class="small-12 columns">
+                <p class="slogan">Who’s got the best burger in Gothenburg, Sweden?!</p>
+                <p class="links">
+                  <a href="/">Home</a>
+                  <% unless session[:user_id] %>
+                    <a href="/sign_in">Sign In</a>
+                    <a href="/sign_up">Sign Up</a>
+                  <% end %>
+                  <% if session[:user_id] %>
+                    <a href="/sign_out">Sign Out</a>
+                  <% end %>
+                </p>
+                <p class="copyright">Copyright © 2015</p>
+              </div>
+            </div>
+          </footer>
+        </div>
+        <div class="small-1 small-centered columns"></div>
+      </div>
+      <script src="/js/vendor/jquery.js"></script>
+      <script src="/js/vendor/jquery.simplyCountable.js"></script>
+      <script src="/js/foundation.min.js"></script>
+      <script>
+        $(document).ready(function() {
+            var flash = $('#flash-container');
+            if (flash.length > 0) {
+                window.setTimeout(function () {
+                    flash.fadeTo(500, 0).slideUp(500, function () {
+                        $(this).remove();
+                    });
+                }, 1000);
+            }
+        });
+      </script>
+      <script>
+        $('#chit_text').simplyCountable({
+          counter:            '#counter',
+          countType:          'characters',
+          maxCount:           140,
+          strictMax:          true,
+          countDirection:     'down',
+          safeClass:          'safe',
+          overClass:          'over',
+          thousandSeparator:  ',',
+          onOverCount:        function(count, countable, counter){},
+          onSafeCount:        function(count, countable, counter){},
+          onMaxCount:         function(count, countable, counter){}
+        });
+      </script>
+      <script>
+        $(document).foundation();
+      </script>
+    </body>
+  </html>
