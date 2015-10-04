@@ -27,6 +27,14 @@ class Gothenburger < Sinatra::Base
     erb :gallery
   end
 
+  get '/learn_more' do
+    erb :learn_more
+  end
+
+  get '/sign_in' do
+    erb :sign_in
+  end
+
   get '/sign_up' do
     erb :sign_up
   end
@@ -44,10 +52,6 @@ class Gothenburger < Sinatra::Base
       new_user.save
       redirect '/'
     end
-  end
-
-  get '/sign_in' do
-    erb :sign_in
   end
 
   # start the server if ruby file executed directly
