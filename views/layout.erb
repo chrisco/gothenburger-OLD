@@ -39,17 +39,17 @@
               <!-- Right Nav Section -->
               <ul class="right">
                 <% unless session[:user_id] %>
-                  <li><a href="/gallery">Gallery</a></li>
-                  <li><a href="/sign_in">Sign In</a></li>
-                  <li><a href="/sign_up">Sign Up</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/sign_in">Sign In</a></li>
+                <li><a href="/sign_up">Sign Up</a></li>
                 <% end %>
                 <% if session[:user_id] %>
-                  <li class="has-dropdown">
-                    <a href="#">Admin</a>
-                    <ul class="dropdown">
-                      <li><a href="/sign_out">Sign Out</a></li>
-                    </ul>
-                  </li>
+                <li class="has-dropdown">
+                  <a href="#">Admin</a>
+                  <ul class="dropdown">
+                    <li><a href="/sign_out">Sign Out</a></li>
+                  </ul>
+                </li>
                 <% end %>
               </ul>
               <!-- Left Nav Section -->
@@ -85,11 +85,11 @@
                   <a href="/">Home</a>
                   <a href="/gallery">Gallery</a>
                   <% unless session[:user_id] %>
-                    <a href="/sign_in">Sign In</a>
-                    <a href="/sign_up">Sign Up</a>
+                  <a href="/sign_in">Sign In</a>
+                  <a href="/sign_up">Sign Up</a>
                   <% end %>
                   <% if session[:user_id] %>
-                    <a href="/sign_out">Sign Out</a>
+                  <a href="/sign_out">Sign Out</a>
                   <% end %>
                 </p>
                 <p class="copyright">Copyright © 2015</p>
@@ -103,34 +103,34 @@
       <script src="/js/vendor/jquery.simplyCountable.js"></script>
       <script src="/js/foundation.min.js"></script>
       <script>
-        $(document).ready(function() {
-            var flash = $('#flash-container');
-            if (flash.length > 0) {
-                window.setTimeout(function () {
-                    flash.fadeTo(500, 0).slideUp(500, function () {
-                        $(this).remove();
-                    });
-                }, 1000);
-            }
-        });
+      $(document).ready(function() {
+      var flash = $('#flash-container');
+      if (flash.length > 0) {
+      window.setTimeout(function () {
+      flash.fadeTo(500, 0).slideUp(500, function () {
+      $(this).remove();
+      });
+      }, 1000);
+      }
+      });
       </script>
       <script>
-        $('#chit_text').simplyCountable({
-          counter:            '#counter',
-          countType:          'characters',
-          maxCount:           140,
-          strictMax:          true,
-          countDirection:     'down',
-          safeClass:          'safe',
-          overClass:          'over',
-          thousandSeparator:  ',',
-          onOverCount:        function(count, countable, counter){},
-          onSafeCount:        function(count, countable, counter){},
-          onMaxCount:         function(count, countable, counter){}
-        });
+      $('#chit_text').simplyCountable({
+      counter:            '#counter',
+      countType:          'characters',
+      maxCount:           140,
+      strictMax:          true,
+      countDirection:     'down',
+      safeClass:          'safe',
+      overClass:          'over',
+      thousandSeparator:  ',',
+      onOverCount:        function(count, countable, counter){},
+      onSafeCount:        function(count, countable, counter){},
+      onMaxCount:         function(count, countable, counter){}
+      });
       </script>
       <script>
-        $(document).foundation();
+      $(document).foundation();
       </script>
     </body>
   </html>
