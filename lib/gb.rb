@@ -4,9 +4,9 @@ require 'data_mapper'
 require 'dm-migrations'
 require 'bcrypt'
 require 'tilt/erb' # To make some warnings go away
-require './lib/burger'
-require './lib/joint'
-require './lib/user'
+# require './lib/burger'
+# require './lib/joint'
+# require './lib/user'
 # require 'byebug' # Must be commented out for Heroku to work (I think)
 
 class Gothenburger < Sinatra::Base
