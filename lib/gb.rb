@@ -23,6 +23,10 @@ class Gothenburger < Sinatra::Base
     erb :index
   end
 
+  get '/gallery' do
+    erb :gallery
+  end
+
   get '/sign_up' do
     erb :sign_up
   end
