@@ -3,7 +3,6 @@
 ## About
 
 * Our first-ever independent project as part of [Makers Academy Sweden](http://www.makersacademy.se/).
-* Soon to be live in the web at [www.gothenburger.herokuapp.com](https://gothenburger.herokuapp.com/).
 
 ## Team Info
 
